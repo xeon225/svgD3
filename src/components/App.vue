@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <svg id="ddd"></svg>
+    <p>1111</p>
+    <p>2222</p>
+    <p>3333</p>
   </div>
 </template>
 
@@ -14,8 +17,13 @@ export default {
     methods: {
         
         ddd:function(){
-            var svg = d3.select("#ddd").append("g");
-            console.log(svg)
+            var svg = d3.select("#app").selectAll("p");
+            svg.datum(7)
+              .append('span')
+              .text(function(d,i){
+                return d + ' ' + i;
+              })
+            console.log(svg.datum())
         }
     },
     ready:function(){

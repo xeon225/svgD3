@@ -1,0 +1,24 @@
+//select 状态	
+select.empty()	//为空返回true,不为空返回false
+	.node()		//返回第一个非空元素，为空返回null
+	.size()		//返回选择集中的元素个数
+
+//select 属性
+select.attr()		//设置获取属性
+	.classed()		//设定获取css类
+	.style()		//设定获取样式	
+	.property()		//设定获取选择集的属性
+	.text()			//设定获取选择集的文本
+	.html()			//设定获取选择集的内部html
+
+//select 添加、插入、删除
+select.append()		//选择集的末尾添加一个元素	
+	.insert()		//选择集的指定元素之前插入一个元素
+	.remove()		//删除选择集中的元素
+
+//select 数据绑定
+select.datum()		//选择集中的每一个元素都绑定相同的数据
+	.data()			//选择集中的每一个元素分别绑定数组的每一项
+		.update		//代表已经存在的元素，修改元素的属性
+		.enter		//
+		.exit
