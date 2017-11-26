@@ -8,15 +8,19 @@
 </template>
 
 <script>
-import Hello from 'components/Hello'
-
+import Lib from 'assets/Lib.js'
 export default {
   components: {
-    Hello
   },
+  computed:{
+        d3:function(){
+            return Lib.d3
+        }
+    },
     methods: {
         
         ddd:function(){
+          var d3 = this.d3;
             var svg = d3.select("#app").selectAll("p");
             svg.datum(7)
               .append('span')
