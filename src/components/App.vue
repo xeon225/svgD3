@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <svg id="ddd"></svg>
-    <p>1111</p>
-    <p>2222</p>
-    <p>3333</p>
+    <p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+
   </div>
 </template>
 
@@ -13,27 +12,43 @@ export default {
   components: {
   },
   computed:{
-        d3:function(){
-            return Lib.d3
-        }
-    },
-    methods: {
-        
-        ddd:function(){
-          var d3 = this.d3;
-            var svg = d3.select("#app").selectAll("p");
-            svg.datum(7)
-              .append('span')
-              .text(function(d,i){
-                return d + ' ' + i;
-              })
-            console.log(svg.datum())
-        }
-    },
-    ready:function(){
-        this.ddd();
-        
+    d3:function(){
+      return Lib.d3
     }
+  },
+  methods: {
+    ddd:function(){
+      var d3 = this.d3;
+      var persons = [13,6,9];  
+      var p = d3.select("#app").selectAll("p");
+      var update = p.data(persons)
+      var enter = update.enter()
+      var exit =update.exit()
+
+      // var update = p.data(persons).filter(function(d,i){
+      //   if(d > 8)
+      //   {
+      //     console.log(1)
+      //     return true;
+      //   }
+      //   else
+      //   {
+      //     return false;
+      //   }
+      // })
+      // update.sort(function(a,b){
+      //     return b-a;
+      // })
+      update.text(function(d){return d;})
+      enter.append("p")
+        .text(function(d){return d;})
+      exit.remove()
+    }
+  },
+  ready:function(){
+      this.ddd();
+      
+  }
 }
 </script>
 

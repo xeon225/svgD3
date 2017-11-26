@@ -22,3 +22,8 @@ select.datum()		//选择集中的每一个元素都绑定相同的数据
 		.update		//代表已经存在的元素，修改元素的属性
 		.enter		//代表丢失的元素，它们积即将加入选择集，加入他们并赋予它们属性
 		.exit		//代表多余的元素，删除它们
+
+//selection 常用方法
+selection.filter(function(d,i))		//过滤
+		.sort(function(a,b))		//排序
+		.each(function(d,i))		//遍历
