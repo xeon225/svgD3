@@ -27,3 +27,13 @@ select.datum()		//选择集中的每一个元素都绑定相同的数据
 selection.filter(function(d,i))		//过滤
 		.sort(function(a,b))		//排序
 		.each(function(d,i))		//遍历
+		.call(function(d))			//传递
+
+//数组常用方法
+	//排序
+selection.sort(d3.ascending)		//递增
+			(d3.descending)			//递减
+	//求值
+	d3.min(array)					//最小值
+	d3.max(array)					//最大值
+	d3.extend(array)				//最小值和最大值

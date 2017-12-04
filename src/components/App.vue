@@ -19,12 +19,13 @@ export default {
   methods: {
     ddd:function(){
       var d3 = this.d3;
-      var persons = [13,6,9];  
-      var p = d3.select("#app").selectAll("p");
-      var update = p.data(persons)
-      var enter = update.enter()
-      var exit =update.exit()
-
+      var persons = [30,20,10,50,40];  
+      var min = d3.min(persons, function(d){return d*3});
+      var max = d3.max(persons, function(d){return d-5});
+      var extent = d3.extent(persons, function(d){return d%7});
+      console.log(min);
+      console.log(max);
+      console.log(extent);
       // var update = p.data(persons).filter(function(d,i){
       //   if(d > 8)
       //   {
