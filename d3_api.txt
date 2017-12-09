@@ -37,3 +37,9 @@ selection.sort(d3.ascending)		//递增
 	d3.min(array)					//最小值
 	d3.max(array)					//最大值
 	d3.extend(array)				//最小值和最大值
+	//生成和操作	
+	d3.range(d)						//等差数列
+	d3.shuffle(d)					//随机排列
+	d3.merge(arrays)				//合并两个数组
+	//映射
+	d3.map
