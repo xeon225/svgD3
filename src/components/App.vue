@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <svg id="ddd"></svg>
-    <p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
-
+    <div class="mp3">
+    
+    </div>
   </div>
 </template>
 
@@ -18,32 +18,28 @@ export default {
   },
   methods: {
     ddd:function(){
-      var d3 = this.d3;
-      var persons = [30,20,10,50,40];  
-      var min = d3.min(persons, function(d){return d*3});
-      var max = d3.max(persons, function(d){return d-5});
-      var extent = d3.extent(persons, function(d){return d%7});
-      console.log(min);
-      console.log(max);
-      console.log(extent);
-      // var update = p.data(persons).filter(function(d,i){
-      //   if(d > 8)
-      //   {
-      //     console.log(1)
-      //     return true;
-      //   }
-      //   else
-      //   {
-      //     return false;
-      //   }
-      // })
-      // update.sort(function(a,b){
-      //     return b-a;
-      // })
-      update.text(function(d){return d;})
-      enter.append("p")
-        .text(function(d){return d;})
-      exit.remove()
+    	var d3 = this.d3;
+      var linear = d3.scaleLinear()
+                    .domain([0,500])
+                    .range([0,100]);
+
+      console.log(linear(50))
+      console.log(linear.invert(50))
+      console.log(linear.range(50))
+    },
+    mp3:function(){
+      var mp3 = this.d3.select(".mp3").selectAll("a");
+      var mp3Data = mp3._groups[0];
+
+      mp3.data(mp3Data)
+          // .each(function(d,i){
+            // console.log(d.title)
+            // mp3.attr("title",'http://tingmp3.520tingshu.com/玄幻奇幻/吞噬星空/'+d.title+'.mp3')
+            // .text('http://tingmp3.520tingshu.com/玄幻奇幻/吞噬星空/'+d.title+'.mp3')
+          // })
+          // .text(function(d,i){
+          //   return 'http://tingmp3.520tingshu.com/玄幻奇幻/吞噬星空/'+d.title+'.mp3'
+          // })
     }
   },
   ready:function(){

@@ -43,3 +43,77 @@ selection.sort(d3.ascending)		//递增
 	d3.merge(arrays)				//合并两个数组
 	//映射
 	d3.map
+
+//定量比例尺
+	//线性比例尺
+var linear = d3.scale.linear()		//创建一个线性比例尺
+	linear(x)						//输入一个在定义域的值x，返回值域内对应的值
+	linear.invert(y)				//输入一个在值域内的值，返回定义域内对应的值
+
+
+
+
+
+3.x 4.x区别
+//布局的变化规则
+d3.layout.cluster		d3.cluster
+d3.layout.hierarchy		d3.hierarchy
+d3.layout.pack			d3.pach
+d3.layout.partition		d3.partition
+d3.layout.tree			d3.tree
+d3.layout.treemap		d3.treemap
+d3.layout.chord			d3.chord
+d3.layout.histogram		d3.histogram
+d3.layout.pie			d3.pie
+d3.layout.stack			d3.stack
+d3.layout.bundle		d3.hierarchy
+d3.layout.force			d3.forceSimulation
+
+//生成器的变化规则
+d3.svg.line				d3.line
+d3.svg.line.radial		d3.radialLine
+d3.svg.area				d3.area
+d3.svg.area.radial      d3.radialArea
+d3.svg.src				d3.arc
+d3.svg.symbol			d3.symbol
+d3.svg.symbolTypes		d3.symbolTypes
+d3.svg.diagonal			//移除
+d3.svg.diagonal.radial  //移除
+//d3.line和d3.area 设置插值模式的命名有如下变化:
+linear					d3.curveLinear
+linear-closed			d3.curveLinearClosed
+step					d3.curveStep
+step-before				d3.curveStepBefore
+
+//比例尺的变化规则
+//将scale之后的点去掉，其后的第一个字母改为大写
+d3.scale.linear 		d3.scaleLinear			//线性比例尺
+d3.scale.sqrt			d3.scaleSqrt
+d3.scale.pow			d3.scalePow
+d3.scale.log			d3.scaleLog
+//颜色模板
+d3.scale.category10		d3.schemeCategory10
+d3.scale.category20		d3.schemeCategory20
+d3.scale.category20b	d3.schemeCategory20b
+d3.scale.category20c	d3.schemeCategory20c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
